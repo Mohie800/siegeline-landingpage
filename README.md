@@ -39,7 +39,26 @@ subsets the client ships, and the screenshots are captures from
 `unity-client/Screenshots/`. They are **copied in and committed** — nothing here reads
 across into a sibling folder at build time.
 
-## Deploying (Cloudflare)
+## Deploying
+
+The site is plain static output, so it runs anywhere. Both hosts are configured; each
+ignores the other's config file.
+
+### Vercel (current target — no DNS migration needed)
+
+`mohyeldeen.dev` runs on Hostinger nameservers (`ns1/ns2.dns-parking.com`) with the apex
+and `www` already pointing at Vercel, and `nakama` / `game2` at the game VPS. Cloudflare
+custom domains would require moving the whole zone to Cloudflare — not worth the risk to
+live backends — so this site takes the one-record route:
+
+1. Import the repo in Vercel (Astro auto-detected: build `pnpm build`, output `dist`).
+2. Project → Settings → Domains → add `siegeline.mohyeldeen.dev`.
+3. At Hostinger add: `CNAME siegeline → cname.vercel-dns.com`.
+
+`vercel.json` carries the CSP and cache headers there — Vercel does **not** read
+`public/_headers`. Keep the two files in sync when either changes.
+
+### Cloudflare
 
 Cloudflare's current dashboard offers two flows. This repo is set up for the newer one:
 
