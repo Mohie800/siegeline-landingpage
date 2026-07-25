@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import Legal from '../../layouts/Legal.astro';
+
+// Builds nothing until Arabic translations exist in src/data/legal/ar/ — Arabic
+// pages link to the English documents in the meantime (see AR_LEGAL_READY).
+export async function getStaticPaths() {
+  const docs = await getCollection('legal', (doc) => doc.id.startsWith('ar/'));
+  return docs.map((doc) => ({
+    params: { slug: doc.id.slice('ar/'.length) },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content } = await render(doc);
+---
+
+<Legal
+  title={doc.data.title}
+  description={doc.data.description}
+  updated={doc.data.updated}
+  lang="ar"
+  path={`/${doc.id.slice('ar/'.length)}`}
+>
+  <Content />
+</Legal>

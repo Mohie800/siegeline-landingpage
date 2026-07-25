@@ -1,0 +1,80 @@
+# SIEGELINE RIVALS — landing site
+
+The public website for the game: one marketing page plus the legal and support pages
+Google Play requires. Static Astro site, no client-side JavaScript, deployed to
+Cloudflare Pages. Plan and rationale: [PLAN.md](PLAN.md).
+
+Standalone app — **not** part of war-game's pnpm workspace. Run everything from this
+folder.
+
+```bash
+pnpm install
+pnpm dev            # http://localhost:4321
+pnpm build          # → dist/
+pnpm preview        # serve dist/
+pnpm typecheck      # astro check
+pnpm assets         # re-crop screenshots + regenerate logo/og-image (needs sharp)
+pnpm shots <dir>    # screenshot every page, phone + desktop, against a running preview
+```
+
+## Layout
+
+```
+src/
+  config.ts              every value that changes between "planning" and "published"
+  i18n/ui.ts             all marketing copy, EN + AR
+  data/legal/en/*.md     privacy · terms · account-deletion · support (the documents)
+  pages/                 index, [slug] (legal), ar/index, ar/[slug], 404
+  components/            Header, Footer, Home, PlayBadge
+  layouts/               Base (head/meta/JSON-LD), Legal (document chrome)
+  styles/global.css      fonts, theme tokens, .prose
+  assets/                logo + screenshots (raw-*.png are the untouched captures)
+public/                  fonts, favicon, robots.txt, _headers (CSP + caching)
+scripts/                 prepare-assets.mjs, shots.mjs
+```
+
+Brand assets come from the game itself: the wordmark is
+`unity-client/Assets/Resources/UI/logo-wordmark.png`, the fonts are the same woff2
+subsets the client ships, and the screenshots are captures from
+`unity-client/Screenshots/`. They are **copied in and committed** — nothing here reads
+across into a sibling folder at build time.
+
+## Deploying (Cloudflare Pages)
+
+Connect the repo, then: build command `pnpm build`, output directory `dist`, Node 20+.
+`public/_headers` supplies the CSP and cache rules. No adapter is needed while the site
+is fully static — see PLAN.md §2a for adding server-rendered routes later.
+
+## Before launch — the TODO list
+
+1. **`src/config.ts`** — confirm `supportEmail` exists and is monitored; set
+   `governingLaw`; flip `playLive` to `true` once the Play listing is public.
+2. **`src/data/legal/en/terms.md` §11** — replace the visible `TODO — set the governing
+   jurisdiction` line. The email address also appears literally in the four documents;
+   changing `config.ts` does not rewrite them.
+3. **Screenshots** — the current three are Arabic-UI editor captures, chosen because
+   they were the best available. Recapture in English at phone aspect for the site, and
+   separately for the Play listing (2–8 shots, plus a 1024×500 feature graphic and a
+   512×512 icon).
+4. **Play badge** — `PlayBadge.astro` draws a generic button. Replace with Google's
+   official "Get it on Google Play" badge artwork before linking to a live listing.
+5. **Arabic legal pages** — `AR_LEGAL_READY` is `false`, so Arabic pages link to the
+   English documents. Add `src/data/legal/ar/*.md` and flip the flag.
+6. **Cross-repo work Play requires** (tracked in PLAN.md §6b): an `account_delete` RPC
+   in `war-game/apps/meta/`, plus DELETE ACCOUNT / PRIVACY / TERMS rows in
+   `unity-client/Assets/Scripts/Ui/SettingsSheet.cs`. When the in-app path ships, set
+   `inAppDeletion: true` and update `account-deletion.md`, which currently states
+   honestly that only the email route exists.
+7. **Store identity** — `unity-client/ProjectSettings` still says
+   `com.siegeline.unityslice` / "Siegeline Slice"; the site assumes `com.siegeline.game`.
+
+## Verifying
+
+```bash
+pnpm build && pnpm preview --port 4331     # one shell
+pnpm shots ./shots                          # another — then look at the images
+```
+
+Check by hand before a release: `/privacy` and `/account-deletion` load in a private
+window with no app installed (that is how a Play reviewer sees them), the Arabic pages
+read right-to-left at 360 px, and no page requests a third-party host.

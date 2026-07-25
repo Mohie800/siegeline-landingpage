@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Siegeline">
+  <rect width="64" height="64" rx="14" fill="#05070d" />
+  <path d="M32 9 52 17v16c0 12-8.4 19.6-20 23-11.6-3.4-20-11-20-23V17L32 9Z" fill="none" stroke="#f7c948" stroke-width="4" stroke-linejoin="round" />
+  <path d="m32 21 3.6 7.6 8 1.1-5.9 5.8 1.5 8.2L32 39.9l-7.2 3.8 1.5-8.2-5.9-5.8 8-1.1L32 21Z" fill="#f7c948" />
+</svg>

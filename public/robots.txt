@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://siegeline.mohyeldeen.dev/sitemap-index.xml

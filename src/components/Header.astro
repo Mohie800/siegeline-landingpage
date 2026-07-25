@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/logo.png';
+import PlayBadge from './PlayBadge.astro';
+import { localizedPath, type Locale } from '../config';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const home = localizedPath('/', lang);
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-line/70 bg-ink/85 backdrop-blur supports-[backdrop-filter]:bg-ink/70"
+>
+  <div class="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
+    <a href={home} class="shrink-0" aria-label={t(lang, 'nav.home')}>
+      <Image src={logo} alt="" width={132} densities={[1, 2]} class="h-8 w-auto" loading="eager" />
+    </a>
+
+    <nav class="ms-auto flex items-center gap-4 text-sm sm:gap-6" aria-label={t(lang, 'nav.label')}>
+      <a href={`${home}#game`} class="hidden text-muted transition hover:text-text sm:inline">
+        {t(lang, 'nav.game')}
+      </a>
+      <a href={`${home}#screens`} class="hidden text-muted transition hover:text-text sm:inline">
+        {t(lang, 'nav.screens')}
+      </a>
+      <a href={localizedPath('/support', lang)} class="text-muted transition hover:text-text">
+        {t(lang, 'nav.support')}
+      </a>
+      <span class="hidden sm:block">
+        <PlayBadge lang={lang} size="sm" />
+      </span>
+    </nav>
+  </div>
+</header>
