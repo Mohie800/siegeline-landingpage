@@ -58,6 +58,9 @@ live backends — so this site takes the one-record route:
 `vercel.json` carries the CSP and cache headers there — Vercel does **not** read
 `public/_headers`. Keep the two files in sync when either changes.
 
+`vercel.json` is schema-validated on deploy and rejects any unknown key, so it takes no
+comments — not even the `"//"` convention. Explain changes here instead.
+
 ### Cloudflare
 
 Cloudflare's current dashboard offers two flows. This repo is set up for the newer one:

@@ -52,7 +52,7 @@ and curated screenshots (copied in, not symlinked — see §5).
 | Styling | **Tailwind 4** (`@tailwindcss/vite`) | Same idiom as `war-game/apps/admin`. |
 | Content | Astro content collections — `src/data/legal/{en,ar}/*.md` | Legal text stays in Markdown, reviewable as a diff. |
 | Images | Astro `<Image>` → WebP variants from committed PNG sources | Screenshots are the page's whole weight budget. |
-| Host | **Cloudflare Pages** (free tier) | Same host as the static web client (`war-game/deploy.md` §5); DNS already on Cloudflare. `public/_headers` carries CSP + cache rules. |
+| Host | **Vercel** (free tier), domain `siegeline.mohyeldeen.dev` | Decided 2026-07-25 on DNS grounds: `mohyeldeen.dev` runs on Hostinger nameservers with the apex + `www` already on Vercel and `nakama`/`game2` on the game VPS. A Cloudflare custom domain needs the whole zone moved to Cloudflare — unacceptable risk to live backends — whereas Vercel needs one new `CNAME siegeline → cname.vercel-dns.com`. `vercel.json` carries CSP + cache headers (Vercel ignores `public/_headers`). |
 | Package manager | pnpm, own lockfile | Independent of war-game's workspace. |
 
 Rejected: React+Vite SPA (needless JS for a 5-page brochure), plain hand-written
@@ -67,8 +67,7 @@ does not expose the API the language server needs), so the dev dependency is pin
 Static output is the starting point, not a ceiling. Astro adds server rendering
 **per route**, so none of this requires a rewrite:
 
-- Install `@astrojs/cloudflare` once. Everything stays prerendered until a page
-  opts out.
+- Install `@astrojs/vercel` once. Everything stays prerendered until a page opts out.
 - Add `export const prerender = false` to the top of any single page or API route
   that needs to run on the server — the rest of the site is still built to static
   HTML. This is how a deletion-request **form** (a real POST endpoint instead of a
@@ -242,7 +241,7 @@ submission time rather than trusting this list.
 | **M1** | **Legal + support pages first** — privacy, account-deletion, terms, support (EN, then AR) | The four URLs are live and quotable in Play Console. *This is the critical path to submitting the app; the marketing page is not.* |
 | **M2** | Marketing page: hero, pillars, screenshots, progression, Play badge | Renders well at 360 px, 768 px, 1440 px; no layout shift |
 | **M3** | Asset pass: logo exports, 6 curated screenshots, og-image, favicon, Play graphics | All images AVIF/WebP; page weight ≤ 1.2 MB on first load |
-| **M4** | Deploy: Cloudflare Pages project, DNS on the chosen domain, HTTPS, 404 page | The four legal URLs resolve publicly, non-geofenced, no login |
+| **M4** | Deploy: Vercel project, `CNAME siegeline` at Hostinger, HTTPS, 404 page | The four legal URLs resolve publicly, non-geofenced, no login |
 | **M5** | Cross-repo: `account_delete` RPC + Settings rows (delete / privacy / terms) in Unity; store identity fixed | Deletion works end-to-end from both the app and the web page |
 
 M1 before M2 is deliberate: an unpublished game does not need a marketing page,
