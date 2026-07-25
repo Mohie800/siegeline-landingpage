@@ -39,11 +39,29 @@ subsets the client ships, and the screenshots are captures from
 `unity-client/Screenshots/`. They are **copied in and committed** — nothing here reads
 across into a sibling folder at build time.
 
-## Deploying (Cloudflare Pages)
+## Deploying (Cloudflare)
 
-Connect the repo, then: build command `pnpm build`, output directory `dist`, Node 20+.
-`public/_headers` supplies the CSP and cache rules. No adapter is needed while the site
-is fully static — see PLAN.md §2a for adding server-rendered routes later.
+Cloudflare's current dashboard offers two flows. This repo is set up for the newer one:
+
+**Workers Builds** (the screen with a *Deploy command* field):
+
+| Field | Value |
+| --- | --- |
+| Build command | `pnpm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | repo root (this folder **is** the repo root) |
+
+`wrangler.jsonc` makes it an assets-only Worker — no Worker script, Cloudflare just
+serves `dist/`, with `404.html` as the not-found page. It must be committed and pushed,
+or the deploy step fails with a missing-configuration error.
+
+**Classic Pages** (the screen with a *Build output directory* field) also works: build
+command `pnpm run build`, output directory `dist`, no deploy command — `wrangler.jsonc`
+is simply ignored.
+
+Either way `public/_headers` supplies the CSP and cache rules (both flows honour it), and
+no adapter is needed while the site is fully static — see PLAN.md §2a for adding
+server-rendered routes later.
 
 ## Before launch — the TODO list
 

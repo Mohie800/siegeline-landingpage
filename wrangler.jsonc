@@ -1,0 +1,11 @@
+{
+  // Static-assets-only Worker: no Worker script, Cloudflare just serves ./dist.
+  // Used by the "Deploy command" (`npx wrangler deploy`) in Workers Builds.
+  "name": "siegeline-landingpage",
+  "compatibility_date": "2026-07-25",
+  "assets": {
+    "directory": "./dist",
+    // Astro emits dist/404.html — serve it for unknown paths.
+    "not_found_handling": "404-page"
+  }
+}
