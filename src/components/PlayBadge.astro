@@ -9,9 +9,13 @@ interface Props {
 }
 const { lang, size = 'lg', class: klass = '' } = Astro.props;
 
-const dims =
-  size === 'lg' ? 'px-6 py-3.5 text-base gap-3' : 'px-3.5 py-2 text-sm gap-2';
-const icon = size === 'lg' ? 22 : 17;
+const dims = size === 'lg' ? 'px-6 py-3.5 text-base gap-3' : 'px-3.5 py-2 text-sm gap-2';
+const icon = size === 'lg' ? 20 : 15;
+
+// A plain play triangle, not Google's four-colour mark — see README "Before launch":
+// the official "Get it on Google Play" badge artwork replaces this before the button
+// ever links to a live listing.
+const GLYPH = 'M8 5.14v13.72a1 1 0 0 0 1.52.86l11.14-6.86a1 1 0 0 0 0-1.72L9.52 4.28A1 1 0 0 0 8 5.14Z';
 ---
 
 {
@@ -20,8 +24,15 @@ const icon = size === 'lg' ? 22 : 17;
       href={PLAY_URL}
       class={`inline-flex items-center rounded-xl bg-gold font-bold text-ink shadow-lg shadow-gold/20 transition hover:bg-white ${dims} ${klass}`}
     >
-      <svg width={icon} height={icon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M3.6 1.9a1 1 0 0 0-.5.9v18.4a1 1 0 0 0 .5.9l10.2-10.1L3.6 1.9Zm11.6 8.6 2.9-2.9-11-6.3 8.1 9.2Zm0 3 8.1 9.2 11-6.3-2.9-2.9-16.2 0Z" transform="scale(0.75) translate(2 2)" />
+      <svg
+        width={icon}
+        height={icon}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+        class="shrink-0 rtl:-scale-x-100"
+      >
+        <path d={GLYPH} />
       </svg>
       {t(lang, 'cta.get')}
     </a>
@@ -29,8 +40,15 @@ const icon = size === 'lg' ? 22 : 17;
     <span
       class={`inline-flex items-center rounded-xl border border-gold/40 bg-gold/10 font-bold text-gold ${dims} ${klass}`}
     >
-      <svg width={icon} height={icon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M3.6 1.9a1 1 0 0 0-.5.9v18.4a1 1 0 0 0 .5.9l10.2-10.1L3.6 1.9Zm11.6 8.6 2.9-2.9-11-6.3 8.1 9.2Zm0 3 8.1 9.2 11-6.3-2.9-2.9-16.2 0Z" transform="scale(0.75) translate(2 2)" />
+      <svg
+        width={icon}
+        height={icon}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+        class="shrink-0 rtl:-scale-x-100"
+      >
+        <path d={GLYPH} />
       </svg>
       {t(lang, 'cta.soon')}
     </span>
