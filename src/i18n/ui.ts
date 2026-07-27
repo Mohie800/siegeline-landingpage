@@ -16,7 +16,7 @@ const STRINGS = {
     'cta.soon': 'Coming soon to Google Play',
     'cta.android': 'Android · Free to play · No ads',
 
-    'home.title': 'SIEGELINE RIVALS — real-time siege warfare on Android',
+    'home.title': 'SIEGELINE — real-time siege warfare on Android',
     'home.description':
       'A mobile real-time strategy game: mine gold, raise a base from tier 1 to tier 3, command squads, and break your rival’s siege line. Free to play on Android, in English and Arabic.',
     'hero.kicker': 'Mobile real-time strategy',
@@ -84,7 +84,7 @@ const STRINGS = {
     'cta.soon': 'قريبًا على Google Play',
     'cta.android': 'أندرويد · مجانية · بدون إعلانات',
 
-    'home.title': 'خط الحصار: الخصوم — حرب حصار لحظية على أندرويد',
+    'home.title': 'خط الحصار — حرب حصار لحظية على أندرويد',
     'home.description':
       'لعبة استراتيجية لحظية للجوال: اجمع الذهب، وارفع قاعدتك من الطبقة الأولى إلى الثالثة، وقُد فرقك لكسر خط حصار خصمك. مجانية على أندرويد، بالعربية والإنجليزية.',
     'hero.kicker': 'استراتيجية لحظية للجوال',

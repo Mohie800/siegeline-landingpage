@@ -1,4 +1,4 @@
-# SIEGELINE RIVALS — landing site
+# SIEGELINE — landing site
 
 The public website for the game: one marketing page plus the legal and support pages
 Google Play requires. Static Astro site, no client-side JavaScript, deployed to
@@ -105,8 +105,10 @@ server-rendered routes later.
    `unity-client/Assets/Scripts/Ui/SettingsSheet.cs`. When the in-app path ships, set
    `inAppDeletion: true` and update `account-deletion.md`, which currently states
    honestly that only the email route exists.
-7. **Store identity** — `unity-client/ProjectSettings` still says
-   `com.siegeline.unityslice` / "Siegeline Slice"; the site assumes `com.siegeline.game`.
+7. ~~**Store identity**~~ — done 2026-07-25: the Unity project is now `SIEGELINE` /
+   `com.siegeline.game` / `0.7.0`, matching `SITE.androidAppId`. The Play submission
+   path (listing copy, Data safety answers, content rating, AAB runbook, generated
+   icon and feature graphic) lives in `store-listing/` at the repo root.
 
 ## Verifying
 

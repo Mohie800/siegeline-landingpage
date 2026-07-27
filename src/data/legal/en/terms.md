@@ -1,11 +1,11 @@
 ---
 title: Terms of Service
-description: The rules for playing SIEGELINE RIVALS — accounts, fair play, virtual items, and liability.
+description: The rules for playing SIEGELINE — accounts, fair play, virtual items, and liability.
 updated: '2026-07-25'
 ---
 
 These terms are the agreement between you and **Mohyeldeen** ("we", "us") for the mobile
-game **SIEGELINE RIVALS** (Android package `com.siegeline.game`, "the game"). By
+game **SIEGELINE** (Android package `com.siegeline.game`, "the game"). By
 installing or playing the game, you accept them. If you do not accept them, do not play.
 
 Questions: **support@mohyeldeen.dev**.
@@ -103,7 +103,6 @@ play after a change means you accept the updated terms.
 
 ## 11. Governing law
 
-**TODO — set the governing jurisdiction before publishing.** These terms are governed by
-the laws of that jurisdiction, without regard to conflict-of-law rules, and its courts
-have jurisdiction over any dispute — subject to any mandatory consumer-protection rights
-in your own country of residence.
+These terms are governed by the laws of **Sudan**, without regard to conflict-of-law
+rules, and the courts of Sudan have jurisdiction over any dispute — subject to any
+mandatory consumer-protection rights in your own country of residence.

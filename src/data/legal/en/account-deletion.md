@@ -1,16 +1,30 @@
 ---
 title: Delete your account
-description: How to permanently delete your SIEGELINE RIVALS account and the data attached to it.
+description: How to permanently delete your SIEGELINE account and the data attached to it.
 updated: '2026-07-25'
 ---
 
-You can have your **SIEGELINE RIVALS** account and the data attached to it permanently
+You can have your **SIEGELINE** account and the data attached to it permanently
 deleted. This page explains how to ask, what gets removed, and how long it takes.
 
 > **Uninstalling the game does not delete your account.** Your account lives on our
-> servers so progress survives a new phone. To remove it, use the request below.
+> servers so progress survives a new phone. To remove it, use one of the two routes below.
 
-## How to request deletion
+## Delete it yourself, in the game
+
+This is the fastest route, and it is immediate — there is nothing to wait for.
+
+1. Open the game and tap the **settings** button on the home screen.
+2. Scroll to **ACCOUNT** and tap **DELETE ACCOUNT**.
+3. Read the warning, then tap **DELETE FOREVER**.
+
+Your account is erased the moment you confirm, and the game restarts as a new player.
+Nobody reviews the request and there is no waiting period, so be sure before you tap it.
+
+## Or ask us to do it
+
+Use this if you have already uninstalled the game, cannot get into your account, or
+would simply rather we handled it.
 
 Send an email to **support@mohyeldeen.dev** with the subject **"Delete my account"**,
 and include:
@@ -22,10 +36,8 @@ and include:
 Because accounts are created from a device identifier rather than an email address, we
 have no other way to recognise you — so we may reply with one or two questions that only
 the account holder could answer before we delete anything. This protects you from
-someone else deleting your account.
-
-An in-app **Delete account** option is planned for a future update of the game; until it
-ships, the email route above is the way to do this.
+someone else deleting your account. (The in-app route needs no such check — you are
+already signed in to the account you are deleting.)
 
 ## What gets deleted
 
@@ -46,13 +58,19 @@ afterwards, and starting again means starting from zero.
   confirmed abuse or fraud.
 - Ordinary server logs, which rotate out of routine backups within a short period.
 - Anonymous, aggregated statistics that cannot be linked back to you.
+- The bare record of each individual match you played — the room, who took part, and who
+  won. Those rows also belong to your opponents' ranking history, so removing them would
+  corrupt other players' records. They contain no names, only account identifiers, and
+  once your account is gone yours refers to nothing.
 
 Anything we keep is limited to the above and cannot be used to rebuild your account.
 
 ## How long it takes
 
-We act on deletion requests within **30 days** of confirming the request is genuine, and
-we email you when it is done. There is no charge for this.
+Deleting from inside the game is **immediate**.
+
+For email requests we act within **30 days** of confirming the request is genuine, and we
+email you when it is done. There is no charge for either route.
 
 ## Something else you might want instead
 

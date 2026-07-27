@@ -1,10 +1,10 @@
 ---
 title: Support
-description: Get help with SIEGELINE RIVALS — contact, bug reports, account questions.
+description: Get help with SIEGELINE — contact, bug reports, account questions.
 updated: '2026-07-25'
 ---
 
-Need help with **SIEGELINE RIVALS**? Write to **support@mohyeldeen.dev**. It is a small
+Need help with **SIEGELINE**? Write to **support@mohyeldeen.dev**. It is a small
 team — one developer — so replies usually take **two to three working days**.
 
 ## Reporting a bug

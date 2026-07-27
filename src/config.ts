@@ -9,8 +9,8 @@ export const SITE = {
   url: 'https://siegeline.mohyeldeen.dev',
 
   /** Game brand. */
-  name: 'SIEGELINE RIVALS',
-  nameAr: 'خط الحصار: الخصوم',
+  name: 'SIEGELINE',
+  nameAr: 'خط الحصار',
   tagline: 'Real-time siege warfare, in your pocket.',
   taglineAr: 'حرب حصار لحظية، في جيبك.',
 
@@ -20,8 +20,8 @@ export const SITE = {
   /** TODO(D3): confirm this mailbox exists and is monitored — deletion requests land here. */
   supportEmail: 'support@mohyeldeen.dev',
 
-  /** TODO(D4): governing law for the Terms. Rendered verbatim; leaving TODO is visible on the page. */
-  governingLaw: 'TODO — set governing jurisdiction',
+  /** Governing law for the Terms. Mirrored in the Terms §11 prose — change both. */
+  governingLaw: 'Sudan',
 
   /** Permanent Android application id. Must match unity-client/ProjectSettings. */
   androidAppId: 'com.siegeline.game',
@@ -33,11 +33,11 @@ export const SITE = {
   playLive: false,
 
   /**
-   * Flip to true once the Unity client ships the in-app DELETE ACCOUNT row
-   * (Ui/SettingsSheet.cs). Play requires both paths; today only the web path exists,
-   * and the deletion page must not claim otherwise.
+   * The Unity client ships an in-app DELETE ACCOUNT row (Ui/SettingsSheet.cs)
+   * calling the `account_delete` RPC, so both of the paths Play requires exist.
+   * Set true 2026-07-25; the deletion page describes both routes.
    */
-  inAppDeletion: false,
+  inAppDeletion: true,
 
   /** Working days to action a deletion request. Stated on /account-deletion. */
   deletionWindowDays: 30,

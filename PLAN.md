@@ -1,4 +1,4 @@
-# Plan — SIEGELINE RIVALS landing site + Google Play compliance pages
+# Plan — SIEGELINE landing site + Google Play compliance pages
 
 Status: **M0–M3 built** (scaffold, four legal pages EN, marketing page EN + AR, asset
 pass) · Written 2026-07-25 · Owner: solo dev (Mohyeldeen)
@@ -200,12 +200,12 @@ Play's requirements land in three places. **Only the first is web work.**
 - **In-app privacy link.** Play wants a privacy link inside the app as well as in
   the Console — add **PRIVACY** and **TERMS** rows to `SettingsSheet.cs` opening
   the site URLs.
-- **Store identity is currently wrong for release.** `unity-client/ProjectSettings`
-  has `productName: Siegeline Slice` and `applicationIdentifier.Android:
-  com.siegeline.unityslice`, while the intended id is **`com.siegeline.game`**
-  (permanent once published). Fix before the first upload — the site's Play badge
-  link (`https://play.google.com/store/apps/details?id=…`) depends on it. Also
-  bump `bundleVersion` off `0.1.0`.
+- ~~**Store identity is currently wrong for release.**~~ **DONE 2026-07-25.**
+  `unity-client/ProjectSettings` now has `productName: SIEGELINE`,
+  `applicationIdentifier.Android: com.siegeline.game`, and `bundleVersion: 0.7.0`
+  (versionCode 1). Launcher icons are generated from the logo and assigned to all
+  18 Android icon slots. The full submission path now lives in
+  `store-listing/CHECKLIST.md`.
 
 ### 6c. Console fields to fill at submission (checklist to keep here)
 
