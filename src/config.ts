@@ -44,6 +44,14 @@ export const SITE = {
 
   /** Minimum age. Also declared in the Play Console target-audience section. */
   minimumAge: 13,
+
+  /**
+   * Google Search Console "HTML tag" verification token for the URL-prefix
+   * property https://siegeline.mohyeldeen.dev/ — required by OAuth branding
+   * verification (the homepage must be registered to the Cloud project owner).
+   * Paste only the content value (not the whole <meta> tag). Empty = no tag.
+   */
+  googleSiteVerification: 'K0-loMo_Qy2iJxoHenz2zw-NWjDJiTS-LqwlMA9eDkU',
 } as const;
 
 export const PLAY_URL = `https://play.google.com/store/apps/details?id=${SITE.androidAppId}`;

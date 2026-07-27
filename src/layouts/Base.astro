@@ -44,6 +44,9 @@ const jsonLd = {
     <link rel="canonical" href={canonical.href} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#05070d" />
+    {SITE.googleSiteVerification && (
+      <meta name="google-site-verification" content={SITE.googleSiteVerification} />
+    )}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />

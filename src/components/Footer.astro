@@ -20,6 +20,9 @@ const otherLabel = lang === 'en' ? 'العربية' : 'English';
         <p class="mt-2 text-sm text-muted">
           {lang === 'ar' ? SITE.taglineAr : SITE.tagline}
         </p>
+        <p class="mt-3 text-xs leading-relaxed text-muted/90">
+          {t(lang, 'footer.about')}
+        </p>
         {
           AR_READY && (
             <a

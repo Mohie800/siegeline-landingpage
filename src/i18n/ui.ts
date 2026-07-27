@@ -22,7 +22,7 @@ const STRINGS = {
     'hero.kicker': 'Mobile real-time strategy',
     'hero.tagline': 'Build the base. Command the squads. Break their line.',
     'hero.blurb':
-      'Head-to-head siege warfare built for a phone screen. Ten minutes, one map, one rival — no endless base-building timers.',
+      'SIEGELINE is a free real-time strategy game for Android — head-to-head siege warfare built for a phone screen. Ten minutes, one map, one rival — no endless base-building timers.',
 
     'game.eyebrow': 'What you do',
     'game.title': 'Three things, done well',
@@ -56,6 +56,8 @@ const STRINGS = {
       'No banner ads, no interstitials, no rewarded video. The game runs on authoritative servers, so matches are decided by decisions, not by edited memory.',
     'fair.lang': 'Fully playable in English and العربية, right-to-left included.',
 
+    'footer.about':
+      'SIEGELINE is a free real-time strategy game for Android, developed by Mohyeldeen. Signing in with Google is optional and is used only to save your game progress and restore your account across devices.',
     'footer.legal': 'Legal',
     'footer.privacy': 'Privacy policy',
     'footer.terms': 'Terms of service',
@@ -90,7 +92,7 @@ const STRINGS = {
     'hero.kicker': 'استراتيجية لحظية للجوال',
     'hero.tagline': 'ابنِ القاعدة. قُد الفرق. اكسر خطهم.',
     'hero.blurb':
-      'حرب حصار وجهًا لوجه مصمّمة لشاشة الجوال. عشر دقائق، خريطة واحدة، خصم واحد — بلا مؤقتات بناء لا تنتهي.',
+      'خط الحصار (SIEGELINE) لعبة استراتيجية لحظية مجانية على أندرويد — حرب حصار وجهًا لوجه مصمّمة لشاشة الجوال. عشر دقائق، خريطة واحدة، خصم واحد — بلا مؤقتات بناء لا تنتهي.',
 
     'game.eyebrow': 'ماذا تفعل',
     'game.title': 'ثلاثة أشياء، متقنة',
@@ -124,6 +126,8 @@ const STRINGS = {
       'لا لافتات ولا إعلانات بينية ولا فيديو مقابل مكافأة. المباريات تُدار على خوادم موثوقة، فتُحسم بالقرارات لا بالتلاعب.',
     'fair.lang': 'تُلعب بالكامل بالعربية والإنجليزية، مع دعم الكتابة من اليمين إلى اليسار.',
 
+    'footer.about':
+      'خط الحصار (SIEGELINE) لعبة استراتيجية لحظية مجانية على أندرويد من تطوير Mohyeldeen. تسجيل الدخول بحساب Google اختياري ويُستخدم فقط لحفظ تقدمك في اللعبة واستعادة حسابك عبر الأجهزة.',
     'footer.legal': 'قانوني',
     'footer.privacy': 'سياسة الخصوصية',
     'footer.terms': 'شروط الاستخدام',
