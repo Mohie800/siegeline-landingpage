@@ -38,10 +38,10 @@ const STRINGS = {
 
     'screens.eyebrow': 'In game',
     'screens.title': 'A real match, not a mockup',
-    'screens.note': 'Captured in the Unity client during a live match.',
-    'screens.shot1': 'Your first tower, a worker on the nearest gold mine, and fog everywhere else.',
-    'screens.shot2': 'A tier-3 base in full production, with the build bar open.',
-    'screens.shot3': 'Scouting forward — the enemy base appears out of the fog.',
+    'screens.note': 'Captured on a phone during a live match.',
+    'screens.shot1': 'Your first tower, workers on the nearest gold mine, and fog everywhere else.',
+    'screens.shot2': 'A tier-3 base in full production — factories, turrets, and an army massing.',
+    'screens.shot3': 'Pushing through the fog into the rival base.',
 
     'meta.eyebrow': 'Between matches',
     'meta.title': 'An army you keep',
@@ -108,10 +108,10 @@ const STRINGS = {
 
     'screens.eyebrow': 'داخل اللعبة',
     'screens.title': 'مباراة حقيقية، لا صورة تجريبية',
-    'screens.note': 'لقطات مأخوذة من عميل Unity أثناء مباراة حية.',
-    'screens.shot1': 'برجك الأول، وعامل على أقرب منجم ذهب، وضباب في كل اتجاه.',
-    'screens.shot2': 'قاعدة من الطبقة الثالثة في كامل إنتاجها، وشريط البناء مفتوح.',
-    'screens.shot3': 'استطلاع للأمام — قاعدة الخصم تظهر من الضباب.',
+    'screens.note': 'لقطات مأخوذة من هاتف حقيقي أثناء مباراة حية.',
+    'screens.shot1': 'برجك الأول، وعمّال على أقرب منجم ذهب، وضباب في كل اتجاه.',
+    'screens.shot2': 'قاعدة من الطبقة الثالثة في كامل إنتاجها — مصانع وأبراج وجيش يحتشد.',
+    'screens.shot3': 'اختراق الضباب نحو قاعدة الخصم.',
 
     'meta.eyebrow': 'بين المباريات',
     'meta.title': 'جيش يبقى معك',

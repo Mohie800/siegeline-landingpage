@@ -1,9 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/brand/logo.png';
-import shotBase from '../assets/screens/base.png';
-import shotTier3 from '../assets/screens/tier3.png';
-import shotScouting from '../assets/screens/scouting.png';
+import shotBaseEn from '../assets/screens/en-base.jpg';
+import shotTier3En from '../assets/screens/en-tier3.jpg';
+import shotAssaultEn from '../assets/screens/en-assault.jpg';
+import shotBaseAr from '../assets/screens/ar-base.jpg';
+import shotTier3Ar from '../assets/screens/ar-tier3.jpg';
+import shotAssaultAr from '../assets/screens/ar-assault.jpg';
 import PlayBadge from './PlayBadge.astro';
 import { type Locale } from '../config';
 import { t } from '../i18n/ui';
@@ -19,11 +22,19 @@ const pillars = [
   { title: t(lang, 'game.p3.title'), body: t(lang, 'game.p3.body') },
 ];
 
-const shots = [
-  { src: shotBase, caption: t(lang, 'screens.shot1') },
-  { src: shotTier3, caption: t(lang, 'screens.shot2') },
-  { src: shotScouting, caption: t(lang, 'screens.shot3') },
-];
+// On-device captures in the page's own language — Arabic pages show the Arabic UI.
+const shots =
+  lang === 'ar'
+    ? [
+        { src: shotBaseAr, caption: t(lang, 'screens.shot1') },
+        { src: shotTier3Ar, caption: t(lang, 'screens.shot2') },
+        { src: shotAssaultAr, caption: t(lang, 'screens.shot3') },
+      ]
+    : [
+        { src: shotBaseEn, caption: t(lang, 'screens.shot1') },
+        { src: shotTier3En, caption: t(lang, 'screens.shot2') },
+        { src: shotAssaultEn, caption: t(lang, 'screens.shot3') },
+      ];
 ---
 
 <!-- hero -->
